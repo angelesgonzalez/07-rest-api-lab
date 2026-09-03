@@ -2,6 +2,7 @@ export interface CharacterEntityApi {
   id: number;
   name: string;
   type: string;
+  status: string;
   species: string;
   gender: string;
   origin: { name: string; url: string; }
@@ -11,3 +12,4 @@ export interface CharacterEntityApi {
   url: string;
   created: string;
 }
+
