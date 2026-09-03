@@ -15,18 +15,17 @@ import * as classes from './character-card.styles';
 interface Props {
   character: CharacterEntityVm;
   onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete } = props;
+  const { character, onEdit } = props;
 
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Character">{character.rating}</Avatar>}
+        avatar={<Avatar aria-label="Character">{character.id}</Avatar>}
         title={character.name}
-        subheader={character.address}
+        subheader={character.gender}
       />
       <CardContent>
         <div className={classes.content}>
@@ -36,16 +35,13 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {character.description}
+            {character.species}
           </Typography>
         </div>
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
-        </IconButton>
-        <IconButton onClick={() => onDelete(character.id)}>
-          <DeleteIcon />
         </IconButton>
       </CardActions>
     </Card>
