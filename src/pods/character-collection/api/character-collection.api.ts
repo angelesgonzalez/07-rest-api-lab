@@ -12,11 +12,12 @@ interface CharacterListResponse {
 
 }
 
+const apiUrl = `https://rickandmortyapi.com/api/character`;
 
 export const getCharacterCollection = async (): Promise<
   CharacterEntityApi[]
 > => {
-  const response = await fetch('https://rickandmortyapi.com/api/character');
+  const response = await fetch(apiUrl);
 
   if (!response.ok) {
     throw new Error(`There's been an error while fetching characters: ${response.status} `)
