@@ -13,3 +13,12 @@ export const mapCharacterFromApiToVm = (
   gender: character.gender,
 });
 
+export const mapCharacterFromVmToApi = (
+  character: viewModel.Character
+): apiModel.Character => ({
+  id: Number(character.id),
+  name: character.name,
+  status: character.status,
+  species: character.species,
+  gender: character.gender,
+} as apiModel.Character);

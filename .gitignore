@@ -22,3 +22,6 @@ yarn-error.log*
 
 # Remember plugin history
 .remember/
+
+# Playwright MCP test artifacts
+.playwright-mcp/
