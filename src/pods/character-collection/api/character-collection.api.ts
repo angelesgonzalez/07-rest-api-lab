@@ -12,7 +12,7 @@ interface CharacterListResponse {
 
 }
 
-const apiUrl = `https://rickandmortyapi.com/api/character`;
+const apiUrl = `/api/character`;
 
 export const getCharacterCollection = async (): Promise<
   CharacterEntityApi[]
