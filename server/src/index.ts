@@ -31,6 +31,13 @@ app.get('/api/character', async (context) => {
   return context.json(response);
 });
 
+app.get('/api/character/:id', (context) => {
+  return context.json(
+    db.characters.find((c) => c.id === Number(context.req.param('id')))
+  );
+});
+
+
 app.put('/api/character/:id', async (context) => {
   const id = Number(context.req.param('id'));
   const character = await context.req.json();
