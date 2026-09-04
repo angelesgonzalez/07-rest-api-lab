@@ -14,20 +14,21 @@ app.use(logger());
 
 app.use('/api/*', cors());
 
+const PAGE_SIZE = 20;
+
 app.get('/api/character', async (context) => {
+  const page = Number(context.req.query('page') ?? '1');
+  const start = (page - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+
   const response: CharacterListResponse = {
     info: {
       count: db.characters.length,
+      pages: Math.ceil(db.characters.length / PAGE_SIZE),
     },
-    results: db.characters,
+    results: db.characters.slice(start, end),
   };
   return context.json(response);
-});
-
-app.get('/api/character/:id', (context) => {
-  return context.json(
-    db.characters.find((c) => c.id === Number(context.req.param('id')))
-  );
 });
 
 app.put('/api/character/:id', async (context) => {

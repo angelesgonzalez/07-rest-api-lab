@@ -23,6 +23,7 @@ export interface Character {
 export interface CharacterListResponse {
   info: {
     count: number;
+    pages: number;
   };
   results: Character[];
 }
