@@ -6,7 +6,6 @@ export interface Character {
   species: string,
   gender: string,
   bestSentence?: string,
-
 }
 
 

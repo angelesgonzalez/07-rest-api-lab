@@ -11,6 +11,7 @@ export const mapCharacterFromApiToVm = (
   status: character.status,
   species: character.species,
   gender: character.gender,
+  bestSentence: character.bestSentence,
 });
 
 export const mapCharacterFromVmToApi = (
@@ -21,4 +22,5 @@ export const mapCharacterFromVmToApi = (
   status: character.status,
   species: character.species,
   gender: character.gender,
+  bestSentence: character.bestSentence,
 } as apiModel.Character);
