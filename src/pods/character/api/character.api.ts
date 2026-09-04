@@ -18,7 +18,13 @@ export const getCharacter = async (id: string): Promise<Character> => {
 
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
-  console.warn('saveCharacter not implemented yet — Ejercicio 2');
-  return false;
+  const response = await fetch(`/api/character/${character.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(character) //fetch no serializa objetos automaticamente
+  })
+  return response.ok;
 };
 

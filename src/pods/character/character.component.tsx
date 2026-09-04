@@ -27,6 +27,12 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <TextFieldComponent name="status" label="Status" disabled />
           <TextFieldComponent name="species" label="Species" disabled />
           <TextFieldComponent name="gender" label="Gender" disabled />
+          <TextFieldComponent
+            name="bestSentence"
+            label="Best sentence"
+            multiline={true}
+            rows={2}
+          />
           <Button type="submit" variant="contained" color="primary">
             Save
           </Button>
