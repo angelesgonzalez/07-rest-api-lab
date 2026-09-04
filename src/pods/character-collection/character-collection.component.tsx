@@ -8,12 +8,16 @@ interface Props {
   characterCollection: CharacterEntityVm[];
   onCreateCharacter: () => void;
   onEdit: (id: string) => void;
+  page: number;
+  totalPages: number;
+  onNextPage: () => void;
+  onPrevPage: () => void;
 }
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterCollection, onCreateCharacter, onEdit } = props;
+  const { characterCollection, onCreateCharacter, onEdit, page, totalPages, onNextPage, onPrevPage } = props;
 
   return (
     <div className={classes.root}>
@@ -32,6 +36,17 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
           </li>
         ))}
       </ul>
+      <div>
+        <Button onClick={onPrevPage} disabled={page <= 1}>
+          Previous
+        </Button>
+        <span>
+          Page {page} of {totalPages}
+        </span>
+        <Button onClick={onNextPage} disabled={page >= totalPages}>
+          Next
+        </Button>
+      </div>
     </div>
   );
 };
