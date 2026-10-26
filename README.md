@@ -50,6 +50,8 @@ El punto de partida (`laboratory`) traía un ejemplo de hoteles. Renombré escen
 
 ### Opcional: Paginación
 
+> Esta parte vive en la rama `paginacion`, no en `main`.
+
 - Poblé el servidor local con 100 personajes reales (los traje de la API pública) para tener datos suficientes como para que la paginación tuviera sentido.
 - `GET /api/character` ahora acepta un query param `?page=`, devuelve 20 personajes por página y el total de páginas (`info.pages`).
 - La lista de personajes tiene botones "Previous"/"Next" para navegar entre páginas, deshabilitados en los extremos.
